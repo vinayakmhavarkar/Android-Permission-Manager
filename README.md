@@ -17,19 +17,27 @@
 
 ### Step 1: Add JitPack to `settings.gradle` (if hosting on GitHub later)
 
-```kotlin
+#kotlin
+```
 dependencyResolutionManagement {
     repositories {
         ...
         maven { url 'https://jitpack.io' }
     }
 }
-
+```
+### Step 2: Add dependency in app/build.gradle:
+```
 dependencies {
     implementation 'com.github.yourgithubusername:AndroidPermissionManager:1.0.0'
 }
+```
 
 
+### CAMRA 
+# 📸 Camera Permission Usage
+- For Kotlin:
+ ```
 CameraPermissionHelper.requestCameraPermission(
     context = this,
     onGranted = {
@@ -39,9 +47,9 @@ CameraPermissionHelper.requestCameraPermission(
         // Permission denied permanently or temporarily
     }
 )
-
-
-
+```
+- For Java:
+```
 CameraPermissionHelper.INSTANCE.requestCameraPermission(
     this,
     () -> {
@@ -51,6 +59,7 @@ CameraPermissionHelper.INSTANCE.requestCameraPermission(
         // onDenied
     }
 );
+```
 
 
 
@@ -60,9 +69,3 @@ MIT License
 
 
 
----
-
-Let me know if you want:
-- A second example for storage permission
-- Markdown with screenshot/image instructions
-- A full GitHub-ready project template
